@@ -1,0 +1,66 @@
+﻿/* Fondo degradado para el login */
+body {
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Contenedor principal de login */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Tarjeta de login */
+.login-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo de los campos */
+input.form-control {
+    border-radius: 30px;
+    padding: 12px 20px;
+}
+
+/* Estilo del botón de Login */
+button#loginBtn {
+    padding: 12px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+    /* Hover en el botón de Login */
+    button#loginBtn:hover {
+        background-color: #3949ab;
+    }
+
+/* Mensaje de error */
+.invalid-feedback {
+    display: none;
+}
+
+input.is-invalid ~ .invalid-feedback {
+    display: block;
+}
+
+/* Spinner de carga */
+.spinner-border {
+    width: 1rem;
+    height: 1rem;
+}

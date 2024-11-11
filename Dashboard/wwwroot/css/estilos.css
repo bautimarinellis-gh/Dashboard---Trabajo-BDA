@@ -1,0 +1,120 @@
+﻿body{
+    background-color: #f8f9fa;
+}
+
+h1{
+    color: #343a40;
+}
+
+.table th, .table td{
+    vertical-align: middle;
+}
+
+.container{
+    margin-top: 30px;
+}
+
+.table thead{
+    background-color: #343a40; 
+    color: #ffffff; 
+}
+
+.login-container{
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Estilo general del botón */
+.btn-ver-ventas {
+    background-color: #007bff; /* Color de fondo (azul) */
+    color: #ffffff; /* Color del texto */
+    border: 1px solid transparent; /* Sin borde visible */
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    padding: 8px 16px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s; /* Transiciones suaves */
+    font-weight: normal; /* Texto normal */
+}
+
+    /* Efecto al pasar el mouse sobre el botón */
+    .btn-ver-ventas:hover {
+        background-color: #ffffff; /* Fondo blanco al pasar el mouse */
+        color: #007bff; /* Color del texto (azul) */
+        border-color: #007bff; /* Color del borde (azul) */
+    }
+
+/* Cambiar el cursor al pasar sobre el botón */
+.btn-ver-ventas {
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+}
+
+/* Asegurar que los botones no se estiren en la columna */
+.table td a.btn-ver-ventas {
+    display: inline-block; /* Mantener el tamaño del botón */
+}
+
+
+
+/* Estilo para la caja de Monto Total */
+.total-box {
+    background-color: #f8f9fa;
+    border: 2px solid #007bff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.monto-total-label {
+    color: #6c757d;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.monto-total {
+    color: #007bff;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Estilo general para inputs y botones */
+input.form-control {
+    border-radius: 8px;
+}
+
+button.btn {
+    border-radius: 8px;
+}
+
+/* Estilo para la tabla */
+.table-hover tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Personalización del encabezado de las tablas */
+.table-dark th {
+    background-color: #343a40;
+    color: #ffffff;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 1px; /* Espaciado de las letras */
+    font-weight: 600;
+}
+
+/* Bordes redondeados en la tabla */
+.table {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Estilo en hover para filas */
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+}
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .total-box {
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,37 @@
+﻿/* Estilos para semaforización según el estado */
+.estado-semaforo {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px; /* Espacio entre el círculo y el texto */
+    vertical-align: middle; /* Alinear círculo con el texto */
+}
+
+/* Colores para los estados de la semaforización */
+.rojo {
+    background-color: #dc3545; /* Color rojo */
+}
+
+.amarillo {
+    background-color: #ffc107; /* Color amarillo */
+}
+
+.verde {
+    background-color: #28a745; /* Color verde */
+}
+
+/* Estilos para la referencia de colores */
+.referencia-colores {
+    text-align: center;
+}
+
+.estado-ref {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+    .estado-ref span {
+        margin-left: 8px; /* Separación entre el círculo y el texto */
+    }

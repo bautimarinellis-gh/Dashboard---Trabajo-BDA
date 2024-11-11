@@ -1,0 +1,15 @@
+﻿@page
+@model Dashboard.Pages.IndexModel
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido al Dashboard</h1>
+    <p class="lead">Gestiona tus ventas, autos, sucursales y mucho más desde un solo lugar.</p>
+    <div class="mt-4">
+        <a class="btn btn-primary btn-lg" asp-page="/Autos">Ver Autos</a>
+        <a class="btn btn-secondary btn-lg" asp-page="/Sucursales">Ver Sucursales</a>
+        <a class="btn btn-success btn-lg" asp-page="/Ventas">Ver Ventas</a>
+    </div>
+</div>

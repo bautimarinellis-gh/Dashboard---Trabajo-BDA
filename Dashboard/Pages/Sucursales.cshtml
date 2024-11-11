@@ -1,0 +1,84 @@
+﻿@page
+@model Dashboard.Pages.SucursalesModel
+
+<head>
+    <title>Sucursales</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/estilos.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/semaforizacion.css" rel="stylesheet" asp-append-version="true" />
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Sucursales</h1>
+
+        <!-- Sección de referencia para los colores -->
+        <div class="referencia-colores mb-4">
+            <h5 class="text-center mb-3">Referencias generales de las sucursales</h5>
+            <div class="d-flex justify-content-around">
+                <div class="estado-ref">
+                    <span class="estado-semaforo rojo"></span>
+                    <span>Rojo: Menos de $100.000</span>
+                </div>
+                <div class="estado-ref">
+                    <span class="estado-semaforo amarillo"></span>
+                    <span>Amarillo: Entre $100.000 y $150.000</span>
+                </div>
+                <div class="estado-ref">
+                    <span class="estado-semaforo verde"></span>
+                    <span>Verde: Más de $150.000</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de filtros -->
+        <form method="get">
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <input type="text" name="NombreFiltro" class="form-control" placeholder="Nombre" value="@Model.NombreFiltro" />
+                </div>
+                <div class="col-md-3">
+                    <input type="text" name="UbicacionFiltro" class="form-control" placeholder="Ubicación" value="@Model.UbicacionFiltro" />
+                </div>
+                <div class="col-md-3">
+                    <input type="text" name="TelefonoFiltro" class="form-control" placeholder="Teléfono" value="@Model.TelefonoFiltro" />
+                </div>
+                <div class="col-md-3 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Dashboard -->
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Ubicación</th>
+                        <th>Teléfono</th>
+                        <th>Ventas</th>
+                        <th>Estado</th> <!-- Nueva columna para Estado -->
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var sucursal in Model.ListaSucursales)
+                    {
+                        <tr>
+                            <td>@sucursal.Nombre</td>
+                            <td>@sucursal.Ubicacion</td>
+                            <td>@sucursal.Telefono</td>
+                            <td>
+                                <a href="/Ventas?sucursalId=@sucursal.Id" class="btn-ver-ventas">Ver Ventas</a>
+                            </td>
+                            <td>
+                                <!-- Mostrar el estado de la sucursal con color basado en el valor -->
+                                <span class="estado-semaforo @sucursal.Estado.ToLower()"></span>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>

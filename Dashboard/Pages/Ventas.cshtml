@@ -1,0 +1,65 @@
+﻿@page
+@model Dashboard.Pages.VentasModel
+
+<head>
+    <title>Ventas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/estilos.css" rel="stylesheet" asp-append-version="true" />
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Ventas</h1>
+
+        <!-- Monto Total destacado -->
+        <div class="row mb-4 justify-content-center">
+            <div class="col-md-6">
+                <div class="total-box p-3 mb-4 rounded text-center">
+                    <h4 class="monto-total-label">Monto Total</h4>
+                    <h2 class="monto-total">@Model.MontoTotal.ToString("C")</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filtros de búsqueda -->
+        <form method="get" class="row g-3 mb-4">
+            <div class="col-md-3">
+                <input type="date" asp-for="FiltroFecha" class="form-control" placeholder="Fecha">
+            </div>
+            <div class="col-md-3">
+                <input type="text" asp-for="FiltroPrecioFinal" class="form-control" placeholder="Precio Final">
+            </div>
+            <div class="col-md-3">
+                <input type="text" asp-for="FiltroAuto" class="form-control" placeholder="Modelo del Auto">
+            </div>
+            <div class="col-md-3 d-flex align-items-end">
+                <button type="submit" class="btn btn-primary w-100">Buscar</button>
+            </div>
+        </form>
+
+        <!-- Tabla de ventas -->
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Precio Final</th>
+                        <th>Auto</th>
+                        <th>Sucursal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var venta in Model.ListaVentas)
+                    {
+                        <tr>
+                            <td>@venta.Fecha.ToShortDateString()</td>
+                            <td>@venta.PrecioFinal.ToString("C")</td>
+                            <td>@venta.Auto.Modelo</td>
+                            <td>@venta.Sucursal.Nombre</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>

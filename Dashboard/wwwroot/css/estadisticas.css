@@ -1,0 +1,19 @@
+﻿canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.text-center {
+    text-align: center; /* Para asegurar que la clase .text-center esté definida */
+}
+
+/* Si quieres que el color de las etiquetas de la leyenda sea coherente */
+.legend-label {
+    color: #333; /* Color de las etiquetas de la leyenda */
+    font-size: 14px; /* Tamaño de la fuente de las etiquetas de la leyenda */
+}
